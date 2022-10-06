@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<math.h>
 #include<stdlib.h>
+#include<time.h>
 
 int main()
 {
-    srand(2007);
+    srand(time(NULL));
     int type;
     do
     {
@@ -20,7 +20,7 @@ int main()
         while (true)
         {
             printf("Guess number:");
-            scanf("%d",&n);
+            scanf("%d", &n);
             guesses++;
             if (n > ans)
             {
@@ -28,19 +28,19 @@ int main()
             }
             else if (n == ans)
             {
-                printf("You are right!You took %d attemps\n",guesses);
+                printf("You are right!You took %d attemps\n", guesses);
                 break;
             }
             else
             {
-               printf("Bigger\n");
+                printf("Bigger\n");
             }
         }
     }
     else
     {
-        int l = 0, r = 1001,guesses=0;
-        int mid,n;
+        int l = 0, r = 1001, guesses = 0;
+        int mid, n;
         do
         {
             printf("Your number is:");
@@ -54,10 +54,10 @@ int main()
             guesses++;
             char ans;
             getchar();
-            scanf("%c",&ans);
+            scanf("%c", &ans);
             if (ans == '=')
             {
-                printf("Hooray!,I took %d attempts",guesses);
+                printf("Hooray!,I took %d attempts", guesses);
                 return 0;
             }
             else if (ans == '<')
@@ -68,7 +68,7 @@ int main()
             {
                 l = mid;
             }
-           
+
         }
     }
 }
