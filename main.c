@@ -38,6 +38,7 @@ int main() {
             } while (n < 1 || n > 1000);
 
             do {
+                attempts++;
                 a = lower + rand() % (upper - lower + 1);
                 printf("Is it %d ???\n", a);
                 getchar(); //Без него почему-то два раза выводит предположение о числе
@@ -46,15 +47,15 @@ int main() {
                     case '<':
                         upper = a;
                         break;
-
                     case '>':
                         lower = a;
                         break;
                     case '=':
-                        printf("Hooray!!! I've Won! The number is %d\n", a);
                         break;
                 }
             } while (a != n);
+
+            printf("Hooray!!! I've Won! The number is %d\nNumber of attempts: %d", a, attempts);
 
             break;
 
