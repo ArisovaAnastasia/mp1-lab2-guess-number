@@ -27,6 +27,11 @@ void main()
 	}
 	else if (regime == 2)
 	{
+		do
+		{
+			printf_s("Input correct data: ");
+			scanf_s("%i", &usernumber);
+		} while (usernumber < 1 || usernumber > 1000);
 		int maxlim = 1000, minlim = 1;
 		guessednumber = 1 + rand() % 1000;
 		printf_s("%i\n", guessednumber);
