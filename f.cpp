@@ -44,8 +44,10 @@ int main() {
 		else {
 			int h = 0 + rand() % (1000 - 0 + 1);
 			char l;
+			int d;
+			d = 0;
 			printf("%i", h);
-			while (h != a) {
+			while (d==0) {
 				printf("enter a sign");
 				getchar();
 				scanf_s("%c", &l);
@@ -54,7 +56,7 @@ int main() {
 					k = h-1;
 					h = p + rand() % (k - p + 1);
 					b += 1;
-					if (h == a) {
+					if (d==1) {
 						break;
 					}
 					else {
@@ -67,13 +69,16 @@ int main() {
 					p = h+1;
 					h = p + rand() % (k - p + 1);
 					b += 1;
-					if (h == a) {
+					if (d == 1) {
 						break;
 					}
 					else {
 						printf("%i ", h);
 						break;
 					}
+					break;
+				case'=':
+					d = 1;
 					break;
 					}
 				}
