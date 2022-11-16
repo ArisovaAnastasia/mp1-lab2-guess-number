@@ -6,9 +6,9 @@
 int main() {
 	int min = 1, max = 1000;
 	int mode;
-	int rand();
 	int a;
-	int k = 0;
+	int k1 = 0;
+	int k2 = 0;
 	char key;
 	srand(time(NULL));
 	
@@ -21,21 +21,23 @@ int main() {
 	switch (mode) {
 	case 1:
 		printf(" Enter your number (1-1000)\n");
-		k += 1;
+		
 		do
 		{
 			scanf_s("%i", &a);
 			if (a > b) {
 				printf("Number is less\n");
+				k1 += 1;
 			}
 			else if (a < b)
 			{
 				printf("Number is greater\n");
+				k1 += 1;
 
 			}
 		} while (a != b);
 
-		printf("You won");
+		printf("You won! Number of attempts = %d\n", k1);
 
 		break;
 
@@ -54,6 +56,7 @@ int main() {
 
 		while (a != b) {
 
+			k2 += 1;
 			
 			b = (min + max) / 2;
 
@@ -63,13 +66,13 @@ int main() {
 
 			switch (key) {
 			case '<':
-				max = b;
+				max = b-1;
 				break;
 			case '>':
-				min = b;
+				min = b+1;
 				break;
 			case '=':
-				printf("guessed it\n");
+				printf("guessed it! Number of attempts = %d\n", k2);
 				break;
 			}
 		}
